@@ -6,9 +6,9 @@
 
 
 {% if execute %}
-{% set results_list = run_query(fetch_items_query).columns[0].values()[0] %}
--- {{ log("results list", info=True)}}
--- {{ log(results_list, info=True)}}
+{% set results_list = run_query(fetch_items_query).columns[0].values()[0] | string() %}
+{{ log("results list", info=True)}}
+{{ log(results_list, info=True)}}
 {{ run_query(results_list) }}
 {% endif %}
 
