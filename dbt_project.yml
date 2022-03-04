@@ -1,7 +1,7 @@
 name: 'dbt-test'
 
 config-version: 2
-version: '0.1'
+version: '0.19.1'
 
 profile: 'dbt-test'
 
@@ -13,7 +13,7 @@ clean-targets:
     - "dbt_modules"
     - "logs"
 
-require-dbt-version: [">=1.0.0", "<2.0.0"]
+# require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
   dbt-test:
