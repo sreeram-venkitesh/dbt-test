@@ -14,7 +14,7 @@
 {# Return the first column #}
 {% set results_list = results.columns[0].values() %}
 {{ log(results_list[0], info=True) }}
-execute results_list[0]
+{{ run_query(results_list[0]) }}
 {% endif %}
 
 
