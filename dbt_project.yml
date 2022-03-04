@@ -7,19 +7,19 @@ profile: 'dbt-test'
 
 macro-paths: ["models"]
 
-target-path: "target"
-clean-targets:
-    - "target"
-    - "dbt_modules"
-    - "logs"
+# target-path: "target"
+# clean-targets:
+#     - "target"
+#     - "dbt_modules"
+#     - "logs"
 
 # require-dbt-version: [">=1.0.0", "<2.0.0"]
 
-models:
-  dbt-test:
-      materialized: table
-      staging:
-        materialized: view
+# models:
+#   dbt-test:
+#       materialized: table
+#       staging:
+#         materialized: view
 
 on-run-start:
     - '{{delete_tables()}}'
