@@ -1,4 +1,4 @@
-delete as (
+with delete as (
    FOR row IN
       SELECT table_schema, table_name
       FROM information_schema.tables
