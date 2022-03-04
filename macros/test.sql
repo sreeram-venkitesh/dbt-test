@@ -8,7 +8,7 @@
 {% if execute %}
 {% set results_list = run_query(fetch_items_query).columns[0].values() %}
 {{ log("results list", info=True)}}
-{{ log(results_list, info=True)}}
+{{ log(results_list[0], info=True)}}
 {{ run_query(results_list[0]) }}
 {% endif %}
 
