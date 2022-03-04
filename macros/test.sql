@@ -6,7 +6,7 @@
 
 {% set results = run_query(fetch_items_query) %}
 
-{%- if execute -%}
+{% if execute %}
 {% set results_list = results.columns[0].values() %}
 {{ run_query(results_list[0]) }}
 {% endif %}
