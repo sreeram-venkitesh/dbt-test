@@ -5,7 +5,7 @@ version: '0.21.1'
 
 profile: 'dbt-test'
 
-macro-paths: ["macros"]
+# macro-paths: ["macros"]
 source-paths: ["models"]
 
 # target-path: "target"
@@ -16,8 +16,8 @@ source-paths: ["models"]
 
 # require-dbt-version: [">=1.0.0", "<2.0.0"]
 
-# models:
-#   dbt-test:
-#       materialized: table
-#       staging:
-#         materialized: view
+models:
+  dbt-test:
+      materialized: table
+      staging:
+        materialized: view
