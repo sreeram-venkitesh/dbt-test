@@ -12,7 +12,7 @@
   drop table 
   {% for table in tables %}
     {{ table }}
-    {% if not loop.last %},{% endif %}
+    -- {% if not loop.last %},{% endif %}
   {% endfor %}
   cascade
 {% endset %}
