@@ -18,4 +18,4 @@
 --   and table_type = 'BASE TABLE' 
 -- )
 
-select * from drop_tables
+select * from drop_tables()
