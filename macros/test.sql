@@ -1,6 +1,6 @@
 {% macro drop_tables() %}
 
-{{ log ("testing") }}
+{{ log("testing") }}
 
 {% set sql %}
   SELECT CONCAT( 'DROP TABLE ', string_agg(table_name,',') , ' CASCADE;' ) 
