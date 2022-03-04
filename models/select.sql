@@ -18,4 +18,4 @@ with tables as (
   and table_type = 'BASE TABLE' 
 )
 
-select * from tables
+select * from drop_tables('cms_synethetic_patient_data_omop',tables)

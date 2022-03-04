@@ -5,7 +5,7 @@ version: '0.21.1'
 
 profile: 'dbt-test'
 
-# macro-paths: ["macros"]
+macro-paths: ["macros"]
 source-paths: ["models"]
 
 # target-path: "target"
