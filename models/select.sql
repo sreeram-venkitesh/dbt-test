@@ -18,4 +18,4 @@ with tables as (
   and table_type = 'BASE TABLE' 
 )
 
-drop table * from tables cascade
+select * from tables
