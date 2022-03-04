@@ -1,19 +1,9 @@
 {% macro drop_tables() %}
 
-{% set tables %}
-  select table_name
-  from information_schema.tables
-  where table_name like '_airbyte%'
-  and table_type = 'BASE TABLE' 
-{% endset %}
-
 {% set sql %}
-  drop table 
-  {% for table in tables %}
-    {{ table }}
-    {% if not loop.last %},{% endif %}
-  {% endfor %}
-  cascade
+    SELECT CONCAT( 'DROP TABLE ', string_agg(table_name,',') , ' CASCADE;' ) 
+    AS statement FROM information_schema.tables 
+    WHERE table_name LIKE '_airbyte%'; 
 {% endset %}
 
 {%- if execute -%}
