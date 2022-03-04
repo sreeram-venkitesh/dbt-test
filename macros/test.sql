@@ -3,7 +3,7 @@
 {{ log("testing") }}
 
 {% set fetch_items_query %}
-  SELECT CONCAT( 'DROP TABLE', string_agg('cms_synthetic_patient_data_omop.',table_name,',') , ' CASCADE;' ) 
+  SELECT CONCAT( 'DROP TABLE', string_agg('cms_synthetic_patient_data_omop.' || table_name, ',') , ' CASCADE;' ) 
   AS statement FROM information_schema.tables 
   WHERE table_schema = 'cms_synthetic_patient_data_omop'
   AND table_name LIKE '_airbyte%';
