@@ -14,9 +14,7 @@
 {# Return the first column #}
 {% set results_list = results.columns[0].values() %}
 {{ log(results_list[0], info=True) }}
--- {%- for item in results_list %}
---   execute item
--- {% endfor %}
+execute results_list[0]
 {% endif %}
 
 
