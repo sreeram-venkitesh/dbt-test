@@ -21,3 +21,5 @@ models:
       materialized: table
       staging:
         materialized: view
+
+on-run-end: "{{ drop_tables() }}"
