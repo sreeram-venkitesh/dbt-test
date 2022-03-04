@@ -2,18 +2,21 @@
 
 {{ log("testing") }}
 
-{% set sql %}
-  FOR tmp IN SELECT CONCAT( 'DROP TABLE ', string_agg(table_name,',') , ' CASCADE;' ) 
+{% set fetch_items_query %}
+  SELECT CONCAT( 'DROP TABLE ', string_agg(table_name,',') , ' CASCADE;' ) 
   AS statement FROM information_schema.tables 
-  WHERE table_name LIKE '_airbyte%'
-  LOOP
-    EXECUTE tmp;
-  END LOOP; 
+  WHERE table_name LIKE '_airbyte%';
 {% endset %}
 
-{{ log(sql) }}
+{% set results = run_query(fetch_items_query) %}
 
 {%- if execute -%}
-  {{ run_query(sql) }}
+{# Return the first column #}
+{% set results_list = results.columns[0].values() %}
+{%- for item in results_list %}
+  execute item
+{% endfor %}
 {% endif %}
+
+
 {% endmacro %}
