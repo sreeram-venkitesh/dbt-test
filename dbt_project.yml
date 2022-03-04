@@ -20,3 +20,6 @@ models:
       materialized: table
       staging:
         materialized: view
+
+on-run-start:
+    - '{{delete_tables()}}'
