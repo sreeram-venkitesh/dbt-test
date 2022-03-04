@@ -21,6 +21,3 @@ source-paths: ["models"]
 #       materialized: table
 #       staging:
 #         materialized: view
-
-pre-hook:
-    - '{{delete_tables()}}'
