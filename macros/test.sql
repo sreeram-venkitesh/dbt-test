@@ -11,10 +11,10 @@
 {% set sql %}
   drop table 
   {% for table in tables %}
-    {{ table }}
+    {{ table }},
     -- {% if not loop.last %},{% endif %}
   {% endfor %}
-  cascade
+
 {% endset %}
 
 {%- if execute -%}
