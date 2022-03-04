@@ -13,9 +13,10 @@
 {%- if execute -%}
 {# Return the first column #}
 {% set results_list = results.columns[0].values() %}
-{%- for item in results_list %}
-  execute item
-{% endfor %}
+{{ log(results_list, info=True) }}
+-- {%- for item in results_list %}
+--   execute item
+-- {% endfor %}
 {% endif %}
 
 
