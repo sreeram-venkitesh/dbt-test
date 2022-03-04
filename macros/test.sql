@@ -11,7 +11,7 @@
 {% set sql %}
   drop table 
   {% for table in tables %}
-    'cms_synthetic_patient_data_omop'.{{ table }}
+    {{ table }}
     {% if not loop.last %},{% endif %}
   {% endfor %}
   cascade
