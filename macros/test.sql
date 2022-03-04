@@ -1,12 +1,11 @@
 {% macro drop_tables(
-  schema,
   tables = []
 ) %}
 
 {% set sql %}
   drop table 
   {% for table in tables %}
-    {{ schema }}.{{ table }}
+    'cms_synthetic_patient_data_omop'.{{ table }}
     {% if not loop.last %},{% endif %}
   {% endfor %}
   cascade
