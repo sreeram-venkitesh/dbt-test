@@ -18,7 +18,7 @@ source-paths: ["models"]
 
 models:
   dbt-test:
-      materialized: table
+      materialized: incremental 
       staging:
         materialized: view
 
