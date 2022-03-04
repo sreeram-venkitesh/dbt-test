@@ -5,7 +5,7 @@ version: '0.21.1'
 
 profile: 'dbt-test'
 
-model-paths: ["models"]
+source-paths: ["models"]
 
 target-path: "target"
 clean-targets:
