@@ -1,4 +1,4 @@
-{% macro drop_tables() %}
+{% macro drop_tables(schema) %}
 
 {% set tables %}
   select table_name
