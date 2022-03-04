@@ -1,0 +1,1 @@
+select * from cms_synthetic_patient_data_omop.relationship;

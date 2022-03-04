@@ -5,7 +5,8 @@ version: '0.21.1'
 
 profile: 'dbt-test'
 
-macro-paths: ["models"]
+macro-paths: ["macros"]
+source-paths: ["models"]
 
 # target-path: "target"
 # clean-targets:
@@ -21,5 +22,5 @@ macro-paths: ["models"]
 #       staging:
 #         materialized: view
 
-on-run-start:
+pre-hook:
     - '{{delete_tables()}}'
