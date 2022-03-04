@@ -10,12 +10,12 @@
 --       raise info 'Dropped tables: %', quote_ident(row.table_schema) || '.' || quote_ident(row.table_name);
 --   end loop;
 -- ) 
-with tables as (
-  select table_name
-  from information_schema.tables
-  where table_name like '_airbyte%'
-  and table_schema not in ('information_schema', 'pg_catalog')
-  and table_type = 'BASE TABLE' 
-)
+-- with tables as (
+--   select table_name
+--   from information_schema.tables
+--   where table_name like '_airbyte%'
+--   and table_schema not in ('information_schema', 'pg_catalog')
+--   and table_type = 'BASE TABLE' 
+-- )
 
-select * from drop_tables()
+select * from drop_tables
